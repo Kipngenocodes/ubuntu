@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <limits.h>
 
-// Recursive function to calculate factorial
-int factorial(int n) {
+// Recursive function to calculate factorial using unsigned long long for larger numbers
+unsigned long long factorial(int n) {
     // Base case: factorial of 0 or 1 is 1
     if (n <= 1) {
         return 1;
@@ -19,8 +20,10 @@ int main() {
     
     if (num < 0) {
         printf("Factorial is not defined for negative numbers.\n");
+    } else if (num > 20) {
+        printf("Warning: Factorial of %d is too large for even unsigned long long (max supported is 20).\n", num);
     } else {
-        printf("Factorial of %d = %d\n", num, factorial(num));
+        printf("Factorial of %d = %llu\n", num, factorial(num));
     }
     
     return 0;
