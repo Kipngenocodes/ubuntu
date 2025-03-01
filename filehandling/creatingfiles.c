@@ -12,6 +12,12 @@ int main() {
 // append more text to the file
   fprintf(fptr, "\nI love C++ programming language.\n");
 
+
+// read some text from the file
+  char myString[100];
+    fscanf(fptr, "%s", myString);
+    printf("%s", myString);
+
   // Close the file
   fclose(fptr);
 
